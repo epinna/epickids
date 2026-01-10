@@ -18,7 +18,7 @@ export default class CharacterSelect extends Phaser.Scene {
 		const previousIndex = CHARACTER_OPTIONS.findIndex((option) => option.name === previouslySelected);
 		this.selectedIndex = previousIndex >= 0 ? previousIndex : 0;
 
-		this.add.text(144, 40, "Choose your hero", {
+		this.add.text(144, 28, "Choose your hero", {
 			fontSize: "14px",
 			fontFamily: "PressStart2P, 'Press Start 2P', monospace",
 			color: "#ffe066",
@@ -26,7 +26,7 @@ export default class CharacterSelect extends Phaser.Scene {
 			wordWrap: { width: 260 }
 		}).setOrigin(0.5);
 
-		this.add.text(144, 60, "Use arrows or tap", {
+		this.add.text(144, 48, "Use arrows or tap", {
 			fontSize: "10px",
 			fontFamily: "PressStart2P, 'Press Start 2P', monospace",
 			color: "#fdfae2",
@@ -58,12 +58,12 @@ export default class CharacterSelect extends Phaser.Scene {
 
 			this.previewFrame = this.add.rectangle(235, 95, 140, 150, 0xffffff, 0.04);
 
-			this.previewSprite = this.add.image(235, 75, "matteo");
+			this.previewSprite = this.add.image(235, 95, "matteo");
 			this.previewSprite.setVisible(false);
 
-			this.previewAvatar = this.add.rectangle(235, 80, 90, 90, 0xffffff, 0.15);
+			this.previewAvatar = this.add.rectangle(235, 100, 90, 90, 0xffffff, 0.15);
 
-			this.previewLabel = this.add.text(235, 130, "", {
+			this.previewLabel = this.add.text(235, 140, "", {
 				fontSize: "12px",
 				fontFamily: "PressStart2P, 'Press Start 2P', monospace",
 				color: "#fdfae2",
@@ -83,9 +83,9 @@ export default class CharacterSelect extends Phaser.Scene {
 
 				const y = baseY + index * rowSpacing;
 				const container = this.add.container(listX, y);
-				container.setSize(100, 20);
+				container.setSize(80, 20);
 
-				const panel = this.add.rectangle(0, 0, 100, 20, 0xffffff, 0.08);
+				const panel = this.add.rectangle(0, 0, 80, 20, 0xffffff, 0.08);
 
 				const label = this.add.text(0, 0, option.name, {
 					fontSize: "10px",
