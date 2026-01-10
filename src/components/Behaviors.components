@@ -1,0 +1,67 @@
+{
+    "components": [
+        {
+            "name": "CharacterMoveComp",
+            "displayName": "Character Move",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": [
+                {
+                    "name": "deltaX",
+                    "label": "Delta X",
+                    "tooltip": "Delta X",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "deltaY",
+                    "label": "Delta Y",
+                    "tooltip": "Delta Y",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "duration",
+                    "label": "Duration",
+                    "tooltip": "Duration",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ControllerButtonComp",
+            "displayName": "",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": []
+        },
+        {
+            "name": "FixedToCameraComp",
+            "displayName": "",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": []
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - User Components Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.UserComponents"
+    },
+    "exportClass": true,
+    "autoImport": true,
+    "importFileExtension": true
+}
