@@ -51,27 +51,19 @@ export default class CharacterSelect extends Phaser.Scene {
 
 		this.background = this.add.tileSprite(0, 0, 384, 240, "back").setOrigin(0, 0);
 		this.middle = this.add.tileSprite(0, 80, 384, 368, "middle").setOrigin(0, 0);
-		this.add.rectangle(144, 110, 260, 160, 0x000000, 0.2);
+		this.add.rectangle(144, 95, 260, 160, 0x000000, 0.2);
 	}
 
 		createPreviewArea() {
 
-			this.previewFrame = this.add.rectangle(235, 140, 140, 170, 0xffffff, 0.04);
+			this.previewFrame = this.add.rectangle(235, 95, 140, 150, 0xffffff, 0.04);
 
-			this.previewSprite = this.add.image(235, 105, "matteo");
+			this.previewSprite = this.add.image(235, 75, "matteo");
 			this.previewSprite.setVisible(false);
 
-			this.previewAvatar = this.add.rectangle(235, 110, 90, 90, 0xffffff, 0.15);
+			this.previewAvatar = this.add.rectangle(235, 80, 90, 90, 0xffffff, 0.15);
 
-			this.previewCaption = this.add.text(235, 50, "Selected hero", {
-				fontSize: "10px",
-				fontFamily: "PressStart2P, 'Press Start 2P', monospace",
-				color: "#ffe066",
-				align: "center",
-				wordWrap: { width: 140 }
-			}).setOrigin(0.5);
-
-			this.previewLabel = this.add.text(235, 170, "", {
+			this.previewLabel = this.add.text(235, 130, "", {
 				fontSize: "12px",
 				fontFamily: "PressStart2P, 'Press Start 2P', monospace",
 				color: "#fdfae2",
@@ -84,16 +76,16 @@ export default class CharacterSelect extends Phaser.Scene {
 	createOptionList() {
 
 			const listX = 60;
-			const baseY = 105;
-			const rowSpacing = 34;
+			const baseY = 70;
+			const rowSpacing = 30;
 
 			this.characterOptions = CHARACTER_OPTIONS.map((option, index) => {
 
 				const y = baseY + index * rowSpacing;
 				const container = this.add.container(listX, y);
-				container.setSize(120, 26);
+				container.setSize(100, 20);
 
-				const panel = this.add.rectangle(0, 0, 120, 26, 0xffffff, 0.08);
+				const panel = this.add.rectangle(0, 0, 100, 20, 0xffffff, 0.08);
 
 				const label = this.add.text(0, 0, option.name, {
 					fontSize: "10px",
