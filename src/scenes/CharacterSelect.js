@@ -159,8 +159,8 @@ export default class CharacterSelect extends Phaser.Scene {
 
 	scalePreviewSprite() {
 
-		const maxWidth = 120;
-		const maxHeight = 110;
+		const maxWidth = 140;
+		const maxHeight = 130;
 		const width = this.previewSprite.width;
 		const height = this.previewSprite.height;
 
