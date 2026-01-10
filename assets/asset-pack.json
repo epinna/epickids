@@ -74,6 +74,26 @@
                 "key": "right-button"
             },
             {
+                "url": "assets/sprites/matteo.png",
+                "type": "image",
+                "key": "matteo"
+            },
+            {
+                "url": "assets/sprites/fede.png",
+                "type": "image",
+                "key": "fede"
+            },
+            {
+                "url": "assets/sprites/stanis.png",
+                "type": "image",
+                "key": "stanis"
+            },
+            {
+                "url": "assets/sprites/noa.png",
+                "type": "image",
+                "key": "noa"
+            },
+            {
                 "url": "assets/environment/tileset.png",
                 "type": "image",
                 "key": "tileset"

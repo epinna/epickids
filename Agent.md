@@ -10,8 +10,9 @@ This project is a Phaser 3 port of Sunny Land that we will evolve into Epic Kids
 ## Scene & Gameplay Flow
 1. **Boot scene** in [src/main.js](src/main.js) loads `assets/preload-pack.json`, then hands off to **Preloader**.
 2. **Preloader** in [src/scenes/Preloader.js](src/scenes/Preloader.js) draws a loading bar (`loading` sprite), streams `assets/asset-pack.json`, and jumps to **TitleScreen**.
-3. **TitleScreen** in [src/scenes/TitleScreen.js](src/scenes/TitleScreen.js) scrolls background layers, blinks the "press enter" prompt, and alternates between title art and instruction card before launching **Level**.
-4. **Level** in [src/scenes/Level.js](src/scenes/Level.js) builds the tilemap, spawns collectibles/enemies via prefabs, wires keyboard + touch controls, and maintains the camera follow + collision logic.
+3. **TitleScreen** in [src/scenes/TitleScreen.js](src/scenes/TitleScreen.js) scrolls background layers, blinks the "press enter" prompt, and alternates between title art and instruction card before launching **CharacterSelect**.
+4. **CharacterSelect** in [src/scenes/CharacterSelect.js](src/scenes/CharacterSelect.js) lets players choose between Matteo, Fede, Stanis, or Noa (tints applied as placeholders) before gameplay.
+5. **Level** in [src/scenes/Level.js](src/scenes/Level.js) builds the tilemap, spawns collectibles/enemies via prefabs, wires keyboard + touch controls, and maintains the camera follow + collision logic.
 
 ## Prefabs & Components
 - Prefabs under [src/prefabs/](src/prefabs) (e.g., Player, Frog, Eagle, collectibles, FX) encapsulate sprite setup plus any unique behavior.

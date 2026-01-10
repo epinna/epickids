@@ -15,6 +15,7 @@ import ControllerButtonComp from "../components/ControllerButtonComp.js";
 /* START-USER-IMPORTS */
 import EnemyDeath from "../prefabs/EnemyDeath.js";
 import FeedbackItem from "../prefabs/FeedbackItem.js";
+import { getCharacterTint } from "../data/characters.js";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -193,6 +194,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 		player.flipX = true;
 		player.flipY = false;
+		this.applySelectedCharacter(player);
 
 		// left_button
 		const left_button = this.add.image(26, 170, "left-button");
@@ -310,6 +312,20 @@ export default class Level extends Phaser.Scene {
 		const camera = this.cameras.main;
 		camera.setBounds(0, 0, this.layer.width, this.layer.height);
 		camera.startFollow(this.player, true);
+	}
+
+	applySelectedCharacter(player) {
+
+		const selectedName = this.registry.get("selectedCharacter") || "Matteo";
+		const tint = getCharacterTint(selectedName);
+
+		if (tint !== undefined) {
+			player.setTint(tint);
+		} else {
+			player.clearTint();
+		}
+
+		player.setData("characterName", selectedName);
 	}
 
 

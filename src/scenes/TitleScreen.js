@@ -94,7 +94,7 @@ export default class TitleScreen extends Phaser.Scene {
 
 		} else {
 
-			this.scene.start("Level");
+			this.scene.start("CharacterSelect");
 		}
 	}
 

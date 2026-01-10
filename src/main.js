@@ -1,6 +1,8 @@
 import Level from "./scenes/Level.js";
 import Preloader from "./scenes/Preloader.js";
 import TitleScreen from "./scenes/TitleScreen.js";
+import CharacterSelect from "./scenes/CharacterSelect.js";
+import { CHARACTER_OPTIONS } from "./data/characters.js";
 
 window.addEventListener("load", function () {
 
@@ -34,6 +36,7 @@ window.addEventListener("load", function () {
 	game.scene.add("Boot", Boot, true);
 	game.scene.add("Preloader", Preloader);
 	game.scene.add("TitleScreen", TitleScreen);
+	game.scene.add("CharacterSelect", CharacterSelect);
 	game.scene.add("Level", Level);
 });
 
@@ -46,6 +49,8 @@ class Boot extends Phaser.Scene {
 
 	create() {
 
+		const defaultCharacter = CHARACTER_OPTIONS[0]?.name || "Matteo";
+		this.registry.set("selectedCharacter", defaultCharacter);
 		this.scene.start("Preloader");
 	}
 }
