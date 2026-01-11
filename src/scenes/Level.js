@@ -15,7 +15,7 @@ import ControllerButtonComp from "../components/ControllerButtonComp.js";
 /* START-USER-IMPORTS */
 import EnemyDeath from "../prefabs/EnemyDeath.js";
 import FeedbackItem from "../prefabs/FeedbackItem.js";
-import { getCharacterTint, getCharacterAtlasPrefix } from "../data/characters.js";
+import { getCharacterAtlasPrefix } from "../data/characters.js";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -317,14 +317,8 @@ export default class Level extends Phaser.Scene {
 	applySelectedCharacter(player) {
 
 		const selectedName = this.registry.get("selectedCharacter") || "Matteo";
-		const tint = getCharacterTint(selectedName);
 		const atlasPrefix = getCharacterAtlasPrefix(selectedName) || "player";
-
-		if (tint !== undefined) {
-			player.setTint(tint);
-		} else {
-			player.clearTint();
-		}
+		player.clearTint();
 
 		player.setData("characterName", selectedName);
 		player.setAnimationPrefix(atlasPrefix);
