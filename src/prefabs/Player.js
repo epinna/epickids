@@ -14,7 +14,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		scene.physics.add.existing(this, false);
 		this.body.setOffset(12, 16);
 		this.body.setSize(8, 16, false);
-		this.play("player/idle/player-idle");
+		this.setAnimationPrefix("player");
+		this.play(this.getAnimationKey("idle"));
 
 		/* START-USER-CTR-CODE */
 
@@ -47,7 +48,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		if (this.hurtFlag) {
 
-			this.play("player/hurt/player-hurt", true);
+			this.play(this.getAnimationKey("hurt"), true);
 		}
 	}
 
@@ -67,6 +68,24 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		body.velocity.y = -100;
 
 		body.velocity.x = (this.scale.x == 1) ? -100 : 100;
+	}
+
+	setAnimationPrefix(prefix) {
+
+		const safePrefix = prefix || "player";
+		this.setData("animationPrefix", safePrefix);
+	}
+
+	getAnimationPrefix() {
+
+		return this.getData("animationPrefix") || "player";
+	}
+
+	getAnimationKey(action, variant) {
+
+		const prefix = this.getAnimationPrefix();
+		const suffix = variant ? `${action}-${variant}` : action;
+		return `${prefix}/${action}/${prefix}-${suffix}`;
 	}
 
 	/* END-USER-CODE */

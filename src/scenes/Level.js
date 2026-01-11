@@ -15,7 +15,7 @@ import ControllerButtonComp from "../components/ControllerButtonComp.js";
 /* START-USER-IMPORTS */
 import EnemyDeath from "../prefabs/EnemyDeath.js";
 import FeedbackItem from "../prefabs/FeedbackItem.js";
-import { getCharacterTint } from "../data/characters.js";
+import { getCharacterTint, getCharacterAtlasPrefix } from "../data/characters.js";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -318,6 +318,7 @@ export default class Level extends Phaser.Scene {
 
 		const selectedName = this.registry.get("selectedCharacter") || "Matteo";
 		const tint = getCharacterTint(selectedName);
+		const atlasPrefix = getCharacterAtlasPrefix(selectedName) || "player";
 
 		if (tint !== undefined) {
 			player.setTint(tint);
@@ -326,6 +327,8 @@ export default class Level extends Phaser.Scene {
 		}
 
 		player.setData("characterName", selectedName);
+		player.setAnimationPrefix(atlasPrefix);
+		player.play(player.getAnimationKey("idle"), true);
 	}
 
 
@@ -356,13 +359,13 @@ export default class Level extends Phaser.Scene {
 		if (leftDown) {
 
 			this.player.body.velocity.x = -vel;
-			this.player.play("player/run/player-run", true);
+			this.player.play(this.player.getAnimationKey("run"), true);
 			this.player.flipX = true;
 
 		} else if (rightDown) {
 
 			this.player.body.velocity.x = vel;
-			this.player.play("player/run/player-run", true);
+			this.player.play(this.player.getAnimationKey("run"), true);
 			this.player.flipX = false;
 
 		} else {
@@ -371,11 +374,11 @@ export default class Level extends Phaser.Scene {
 
 			if (this.downKey.isDown) {
 
-				this.player.play("player/crouch/player-crouch", true);
+				this.player.play(this.player.getAnimationKey("crouch"), true);
 
 			} else {
 
-				this.player.play("player/idle/player-idle", true);
+				this.player.play(this.player.getAnimationKey("idle"), true);
 			}
 		}
 
@@ -383,11 +386,11 @@ export default class Level extends Phaser.Scene {
 
 		if (this.player.body.velocity.y < 0) {
 
-			this.player.play("player/jump/player-jump-1", true);
+			this.player.play(this.player.getAnimationKey("jump", "1"), true);
 
 		} else if (this.player.body.velocity.y > 0) {
 
-			this.player.play("player/jump/player-jump-2", true);
+			this.player.play(this.player.getAnimationKey("jump", "2"), true);
 		}
 	}
 

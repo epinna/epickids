@@ -13,6 +13,30 @@
                 "key": "atlas"
             },
             {
+                "atlasURL": "assets/atlas/matteo-atlas.json",
+                "textureURL": "assets/atlas/matteo-atlas.png",
+                "type": "atlas",
+                "key": "atlas-matteo"
+            },
+            {
+                "atlasURL": "assets/atlas/fede-atlas.json",
+                "textureURL": "assets/atlas/fede-atlas.png",
+                "type": "atlas",
+                "key": "atlas-fede"
+            },
+            {
+                "atlasURL": "assets/atlas/stanis-atlas.json",
+                "textureURL": "assets/atlas/stanis-atlas.png",
+                "type": "atlas",
+                "key": "atlas-stanis"
+            },
+            {
+                "atlasURL": "assets/atlas/noa-atlas.json",
+                "textureURL": "assets/atlas/noa-atlas.png",
+                "type": "atlas",
+                "key": "atlas-noa"
+            },
+            {
                 "atlasURL": "assets/atlas/atlas-props.json",
                 "textureURL": "assets/atlas/atlas-props.png",
                 "type": "atlas",

@@ -4,13 +4,25 @@ and rebuild an atlas image from edited sprites.
 
 Usage examples
 --------------
-Extract sprites:
+Extract every sprite once:
     python sprit.py extract --atlas assets/atlas/atlas.png \
         --data assets/atlas/atlas.json --out sprites_export
+
+Batch extract per character (placeholders for {char} are required when --characters is used):
+    python sprit.py extract --characters matteo fede stanis noa \
+        --atlas assets/atlas/{char}-atlas.png \
+        --data assets/atlas/{char}-atlas.json \
+        --out sprites_export/{char}
 
 Re-apply edits back into a single atlas:
     python sprit.py apply --data assets/atlas/atlas.json \
         --sprites sprites_export --out assets/atlas/atlas.png
+
+Rebuild all character atlases in one go:
+    python sprit.py apply --characters matteo fede stanis noa \
+        --data assets/atlas/{char}-atlas.json \
+        --sprites sprites_export/{char} \
+        --out assets/atlas/{char}-atlas.png
 
 Requires Pillow (``pip install pillow``).
 """
@@ -20,7 +32,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Iterable, Tuple
+from typing import Iterable, Tuple, List, Optional
 
 from PIL import Image
 
@@ -35,15 +47,27 @@ def parse_arguments() -> argparse.Namespace:
     extract_parser = subparsers.add_parser("extract", help="Create PNG files for each frame")
     extract_parser.add_argument("--atlas", required=True, help="Path to the atlas PNG image")
     extract_parser.add_argument("--data", required=True, help="Path to the atlas JSON metadata")
-    extract_parser.add_argument("--out", required=True, help="Output directory for exported sprites")
+    extract_parser.add_argument("--out", required=True, help="Output directory for exported sprites (use {char} when batching)")
+    extract_parser.add_argument(
+        "--characters",
+        nargs="+",
+        metavar="NAME",
+        help="Optionally process several character prefixes; supply {char} placeholders in path arguments",
+    )
 
     apply_parser = subparsers.add_parser("apply", help="Rebuild an atlas from edited sprite PNGs")
-    apply_parser.add_argument("--data", required=True, help="Path to the atlas JSON metadata")
-    apply_parser.add_argument("--sprites", required=True, help="Directory holding edited sprite PNGs")
-    apply_parser.add_argument("--out", required=True, help="Destination path for the rebuilt atlas PNG")
+    apply_parser.add_argument("--data", required=True, help="Path to the atlas JSON metadata (allow {char})")
+    apply_parser.add_argument("--sprites", required=True, help="Directory holding edited sprite PNGs (allow {char})")
+    apply_parser.add_argument("--out", required=True, help="Destination path for the rebuilt atlas PNG (allow {char})")
     apply_parser.add_argument(
         "--base",
         help="Optional base atlas PNG to start from; otherwise a transparent canvas is used",
+    )
+    apply_parser.add_argument(
+        "--characters",
+        nargs="+",
+        metavar="NAME",
+        help="Optionally process several character prefixes; supply {char} placeholders in data/sprites/out arguments",
     )
 
     return parser.parse_args()
@@ -118,15 +142,44 @@ def apply_sprites(json_path: Path, sprites_dir: Path, output_path: Path, base_pa
     print(f"Rebuilt atlas saved to {output_path}")
 
 
+def iterate_characters(characters: Optional[List[str]]) -> List[Optional[str]]:
+    if not characters:
+        return [None]
+    return characters
+
+
+def format_with_character(value: str, character: Optional[str], *, arg_name: str, require_placeholder: bool) -> str:
+    if character is None or value is None:
+        return value
+
+    if "{char}" not in value:
+        if require_placeholder:
+            raise ValueError(f"Argument --{arg_name} must include '{{char}}' when using --characters.")
+        return value
+
+    return value.format(char=character)
+
+
 def main() -> None:
     args = parse_arguments()
     command = args.command
 
     if command == "extract":
-        extract_sprites(Path(args.atlas), Path(args.data), Path(args.out))
+        require_placeholder = bool(args.characters)
+        for character in iterate_characters(args.characters):
+            atlas_path = Path(format_with_character(args.atlas, character, arg_name="atlas", require_placeholder=require_placeholder))
+            data_path = Path(format_with_character(args.data, character, arg_name="data", require_placeholder=require_placeholder))
+            out_path = Path(format_with_character(args.out, character, arg_name="out", require_placeholder=require_placeholder))
+            extract_sprites(atlas_path, data_path, out_path)
     elif command == "apply":
-        base = Path(args.base) if args.base else None
-        apply_sprites(Path(args.data), Path(args.sprites), Path(args.out), base)
+        require_placeholder = bool(args.characters)
+        for character in iterate_characters(args.characters):
+            data_path = Path(format_with_character(args.data, character, arg_name="data", require_placeholder=require_placeholder))
+            sprites_path = Path(format_with_character(args.sprites, character, arg_name="sprites", require_placeholder=require_placeholder))
+            out_path = Path(format_with_character(args.out, character, arg_name="out", require_placeholder=require_placeholder))
+            base_arg = format_with_character(args.base, character, arg_name="base", require_placeholder=False) if args.base else None
+            base = Path(base_arg) if base_arg else None
+            apply_sprites(data_path, sprites_path, out_path, base)
     else:
         raise ValueError(f"Unknown command: {command}")
 

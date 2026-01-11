@@ -1,0 +1,490 @@
+{
+    "frames": [
+        {
+            "filename": "matteo/climb/matteo-climb-1",
+            "frame": {
+                "x": 382,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/climb/matteo-climb-2",
+            "frame": {
+                "x": 70,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/climb/matteo-climb-3",
+            "frame": {
+                "x": 140,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/crouch/matteo-crouch-1",
+            "frame": {
+                "x": 245,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/crouch/matteo-crouch-2",
+            "frame": {
+                "x": 210,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/hurt/matteo-hurt-1",
+            "frame": {
+                "x": 280,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/hurt/matteo-hurt-2",
+            "frame": {
+                "x": 175,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/idle/matteo-idle-1",
+            "frame": {
+                "x": 105,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/idle/matteo-idle-2",
+            "frame": {
+                "x": 350,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/idle/matteo-idle-3",
+            "frame": {
+                "x": 452,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/idle/matteo-idle-4",
+            "frame": {
+                "x": 315,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/jump/matteo-jump-1",
+            "frame": {
+                "x": 35,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/jump/matteo-jump-2",
+            "frame": {
+                "x": 0,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/run/matteo-run-1",
+            "frame": {
+                "x": 385,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/run/matteo-run-2",
+            "frame": {
+                "x": 35,
+                "y": 68,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/run/matteo-run-3",
+            "frame": {
+                "x": 0,
+                "y": 68,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/run/matteo-run-4",
+            "frame": {
+                "x": 420,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/run/matteo-run-5",
+            "frame": {
+                "x": 455,
+                "y": 34,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "matteo/run/matteo-run-6",
+            "frame": {
+                "x": 417,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 33,
+                "h": 32
+            },
+            "sourceSize": {
+                "w": 33,
+                "h": 32
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "app": "Generated by sprit.py helper",
+        "version": "1.0",
+        "image": "matteo-atlas.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 488,
+            "h": 100
+        },
+        "scale": "1"
+    }
+}
