@@ -57,6 +57,8 @@ export default class TitleScreen extends Phaser.Scene {
 	press_enter_text;
 	/** @type {Phaser.GameObjects.Image} */
 	instructions;
+	/** @type {Phaser.GameObjects.Text} */
+	edition_subtitle;
 
 	/* START-USER-CODE */
 
@@ -65,6 +67,7 @@ export default class TitleScreen extends Phaser.Scene {
 		this.editorCreate();
 
 		this.title_screen.setDisplaySize(240, 160);
+		this.addEditionSubtitle();
 		this.createCreditsText();
 
 		this.input.keyboard.on("keydown-ENTER", this.enterPressed, this);
@@ -85,12 +88,28 @@ export default class TitleScreen extends Phaser.Scene {
 		credits.setStroke("#1c1c1c", 3);
 	}
 
+	addEditionSubtitle() {
+
+		const subtitle = this.add.text(162, 105, "Terra Mala Edition", {
+			fontSize: "12px",
+			fontFamily: "PressStart2P, 'Press Start 2P', monospace",
+			color: "#edc708ff",
+			align: "center"
+		});
+		subtitle.setOrigin(0.5);
+		subtitle.setStroke("#1c1c1c", 4);
+		this.edition_subtitle = subtitle;
+	}
+
 	enterPressed() {
 
 		if (this.title_screen.visible) {
 
 			this.title_screen.visible = false;
 			this.instructions.visible = true;
+			if (this.edition_subtitle) {
+				this.edition_subtitle.visible = false;
+			}
 
 		} else {
 
