@@ -85,15 +85,18 @@ export default class CharacterSelect extends Phaser.Scene {
 				const container = this.add.container(listX, y);
 				container.setSize(80, 20);
 
-				const panel = this.add.rectangle(0, 0, 80, 20, 0xffffff, 0.08);
+				const panel = this.add.rectangle(0, 0, 80, 20, 0xffffff, 0.15);
 
 				const label = this.add.text(0, 0, option.name, {
 					fontSize: "10px",
 				fontFamily: "PressStart2P, 'Press Start 2P', monospace",
-				color: "#ffffff",
+				fontStyle: "bold",
+				color: "#3d4250",
+				resolution: 2,
 					align: "center"
 			});
 				label.setOrigin(0.5);
+				label.setStroke("#0d0e14", 1);
 
 			container.add(panel);
 			container.add(label);
@@ -135,7 +138,7 @@ export default class CharacterSelect extends Phaser.Scene {
 		this.characterOptions.forEach((option, index) => {
 			const isActive = index === this.selectedIndex;
 			option.panel.setFillStyle(0xffffff, isActive ? 0.2 : 0.08);
-			option.label.setColor(isActive ? "#ffe066" : "#9fa5b1");
+			option.label.setColor(isActive ? "#d29a2f" : "#3d4250");
 			option.container.setScale(isActive ? 1.07 : 1);
 		});
 
